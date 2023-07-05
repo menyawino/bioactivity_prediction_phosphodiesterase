@@ -1,0 +1,5 @@
+CCOc1ccc(S(=O)(=O)N2CCN(C)CC2)cc1-c1nc2c(=O)[nH]c(=O)n(C)c2[nH]1	CHEMBL316185
+CCCOc1ccc(S(=O)(=O)N(CC)CCN(C)C)cc1-c1nc2c(=O)n(C)c(=O)n(CC(C)C)c2[nH]1	CHEMBL90164
+CCCOc1ccccc1-c1nc2c(=O)n(C)c(=O)n(CC(C)C)c2[nH]1	CHEMBL87901
+CCCOc1ccc(S(=O)(=O)N2CCN(CCN(C)C)CC2)cc1-c1nc2c(=O)n(C)c(=O)n(CC(C)C)c2[nH]1	CHEMBL313197
+CC(C)COc1ccc(S(=O)(=O)N2CCN(C)CC2)cc1-c1nc2c(=O)n(C)c(=O)n(CC(C)C)c2[nH]1	CHEMBL86578
