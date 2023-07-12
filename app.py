@@ -21,32 +21,52 @@ def filedownload(df):
 
 def build_model(input_data):
     # Reads in saved regression model
-    load_model = pickle.load(open('D:\PROJECTS\Bioinformatics I\Big Bioinformatics Camp\Drug Discovery\Phosphodiesterase\phosphodiesterase_model copy.pkl', 'rb'))
+    load_model = pickle.load(open('data/phosphodiesterase_model.pkl', 'rb'))
     # Apply model to make predictions
     prediction = load_model.predict(input_data)
     st.header('**Prediction output**')
     prediction_output = pd.Series(prediction, name='pIC50')
-    molecule_name = pd.Series(load_data[1], name='molecule_name')
+    molecule_name = pd.Series(load_data[0], name='molecule_name')
     df = pd.concat([molecule_name, prediction_output], axis=1)
     st.write(df)
     st.markdown(filedownload(df), unsafe_allow_html=True)
 
-image = Image.open('logo.png')
-st.image(image, use_column_width=True)
+
 
 # Page title
 st.markdown("""
-# Bioactivity Prediction System (Phosphodiesterase 5A)
+# Bioactivity Prediction System with Machine Learning
+## Target: Phosphodiesterase 5A
+""")
 
+st.markdown("""
 This app aims to predict the bioactivity of compounds towards inhibiting the PDE5A enzyme, providing valuable insights and assisting in the discovery of novel drugs for the treatment of pulmonary hypertension.
 
-Pulmonary hypertension (PH) is a debilitating condition characterized by high blood pressure in the arteries of the lungs, leading to symptoms such as shortness of breath and fatigue. The phosphodiesterase 5A (PDE5A) enzyme plays a crucial role in the regulation of vascular smooth muscle tone in the pulmonary arteries. Inhibiting PDE5A can lead to vasodilation and improved blood flow, making it a potential therapeutic target for treating pulmonary hypertension.
+Pulmonary hypertension (PH) is characterized by high blood pressure in arteries of the lungs, leading to symptoms such as shortness of breath and fatigue. Phosphodiesterase 5A (PDE5A) is crucial for the regulation of vascular smooth muscle in pulmonary arteries. Inhibiting PDE5A can lead to vasodilation and improved blood flow, making it a potential therapeutic target for treating pulmonary hypertension.
+""")
 
+st.markdown("""
+---
+## How to use this app
+
+1. Upload a CSV file containing SMILES strings of your compounds (see the example file).
+2. Click the **Predict** button to predict the bioactivity of your molecule against the PDE5A enzyme in pIC50.
+
+""")
+image = Image.open('data/logo.png')
+st.image(image, use_column_width=True)
+
+st.markdown("""
+
+---
 **Credits**
 - App built in `Python` + `Streamlit` by [Omar Ahmed](https://www.linkedin.com/in/omar-ahmedd/)
 - Molecular Descriptors calculated using [PaDEL-Descriptor](http://www.yapcwsoft.com/dd/padeldescriptor/) [[Read the Paper]](https://doi.org/10.1002/jcc.21707).
+- Machine Learning model trained using data from [ChEMBL Database](https://www.ebi.ac.uk/chembl/) obtained on July 5, 2023.
 ---
 """)
+
+
 
 # Sidebar
 with st.sidebar.header('1. Upload your CSV data'):
@@ -58,6 +78,14 @@ with st.sidebar.header('1. Upload your CSV data'):
 if st.sidebar.button('Predict'):
     load_data = pd.read_table(uploaded_file, sep=' ', header=None)
     load_data.to_csv('molecule.smi', sep = '\t', header = False, index = False)
+    
+    with open('molecule.smi', 'r') as file:
+        lines = file.readlines()
+
+    lines = [line.replace('"', '') for line in lines] 
+
+    with open('molecule.smi', 'w') as file:
+        file.writelines(lines)
 
     st.header('**Original input data**')
     st.write(load_data)
@@ -73,7 +101,7 @@ if st.sidebar.button('Predict'):
 
     # Read descriptor list used in previously built model
     st.header('**Subset of descriptors from previously built models**')
-    Xlist = list(pd.read_csv('descriptor_list.csv').columns)
+    Xlist = list(pd.read_csv('data/selected_features.csv').columns)
     desc_subset = desc[Xlist]
     st.write(desc_subset)
     st.write(desc_subset.shape)
