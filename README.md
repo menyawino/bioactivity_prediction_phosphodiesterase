@@ -6,7 +6,7 @@ Welcome to the Bioactivity Prediction System for Phosphodiesterase 5A (PDE5A) re
 
 Pulmonary hypertension (PH) is a debilitating condition characterized by high blood pressure in the arteries of the lungs, resulting in significant health challenges for patients. By targeting the phosphodiesterase 5A (PDE5A) enzyme, which plays a crucial role in regulating vascular smooth muscle tone in the pulmonary arteries, there is potential to enhance blood flow and alleviate symptoms, offering new possibilities for the management of pulmonary hypertension.
 
-The Bioactivity Prediction System leverages advanced machine learning techniques and molecular descriptor calculations using PaDEL-Descriptor, a widely used tool for analyzing chemical structures. By harnessing the power of data science and bioinformatics, this system provides a platform to accelerate the drug discovery process, enabling researchers and scientists to efficiently analyze compound bioactivities and make informed decisions.
+The Bioactivity Prediction System leverages advanced machine learning techniques and molecular descriptor calculations using PaDEL-Descriptor, a widely used tool for analyzing chemical structures. This system provides a platform to accelerate the drug discovery process, enabling researchers and scientists to efficiently analyze compound bioactivities and make informed decisions.
 
 ## Features
 
