@@ -33,4 +33,4 @@ To get started with the Bioactivity Prediction System, please follow these steps
 
 ## Contact
 
-For any inquiries or suggestions, please feel free to reach out to [omarahmedd@aucegypt.edu]. We value your feedback and would be delighted to connect and collaborate on further advancements in this project.
+For any inquiries or suggestions, please feel free to reach out to [omarahmedd@aucegypt.edu]. I value your feedback and would be delighted to connect and collaborate on further advancements in this project.
