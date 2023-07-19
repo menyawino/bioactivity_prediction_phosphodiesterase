@@ -28,7 +28,7 @@ To get started with the Bioactivity Prediction System, please follow these steps
 
 ## Credits
 
-- Built with `Python` and `Streamlit` by [Omar Ahmed]
+- Built with `Python` and `Streamlit` by [Omar Ahmed](https://www.linkedin.com/in/omar-ahmedd/)
 - Molecular descriptors calculated using [PaDEL-Descriptor](http://www.yapcwsoft.com/dd/padeldescriptor/) - [[Read the Paper]](https://doi.org/10.1002/jcc.21707)
 
 ## Contact
