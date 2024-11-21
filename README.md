@@ -15,6 +15,34 @@ The Bioactivity Prediction System leverages advanced machine learning techniques
 - Integrates molecular descriptor calculations using PaDEL-Descriptor
 - Generates insightful predictions to aid in the discovery of novel drugs for pulmonary hypertension
 
+## Biological and Computational Rationale
+### Why Target PDE5A?
+PDE5A is a clinically validated target for PH. Understanding how structural features of chemical compounds influence their ability to inhibit PDE5A can guide the development of next-generation drugs with improved potency and safety profiles.
+
+### Why Use Machine Learning?
+Traditional high-throughput screening methods for identifying bioactive compounds are expensive and time-intensive. Machine learning can analyze large datasets of chemical structures and activities, uncovering patterns that predict bioactivity. This approach not only accelerates the screening process but also reduces the reliance on costly lab experiments.
+
+### Why PaDEL-Descriptor?
+Molecular descriptors, such as lipophilicity and molecular weight, capture critical properties of chemical structures that correlate with biological activity. PaDEL-Descriptor is a robust tool that computes these features efficiently, making it a natural choice for input into machine learning models.
+
+## Scientific Workflow: From Data to Prediction
+The project comprises several key steps, each contributing to the overarching goal of discovering new PDE5A inhibitors:
+
+### Data Preparation:
+
+Chemical structure datasets are curated and formatted. Known PDE5A inhibitors and inactive compounds are included for model training and validation.
+###Feature Engineering:
+
+Molecular descriptors are computed using PaDEL-Descriptor, yielding a numerical representation of each compound's chemical structure.
+
+### Model Training and Validation:
+
+Advanced machine learning algorithms, such as random forests and gradient boosting, are trained to predict bioactivity based on molecular descriptors.
+Performance metrics, including accuracy, precision, and recall, ensure the reliability of the models.
+
+### Predictive Analysis:
+
+The trained model is deployed to evaluate new compounds, highlighting promising candidates for further experimental validation.
 ## Getting Started
 
 To get started with the Bioactivity Prediction System, please follow these steps:
